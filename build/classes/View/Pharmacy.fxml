@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PharmacyController">
+   <children>
+      <AnchorPane fx:id="crud" prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <AnchorPane fx:id="patient" prefHeight="400.0" prefWidth="600.0" visible="false">
+               <children>
+            
+                        <TextField fx:id="code" layoutX="81.0" layoutY="69.0" prefHeight="25.0" prefWidth="109.0" />
+                  <TextField fx:id="nom" layoutX="231.0" layoutY="69.0" prefHeight="25.0" prefWidth="109.0" />
+                  <TextField fx:id="tel" layoutX="371.0" layoutY="69.0" prefHeight="25.0" prefWidth="109.0" />
+                  <TableView fx:id="tabP" layoutX="81.0" layoutY="100.0" onMouseClicked="#Consulter" prefHeight="200.0" prefWidth="425.0">
+                    <columns>
+                      <TableColumn fx:id="colCode" prefWidth="152.0" text="code" />
+                        <TableColumn fx:id="colNom" prefWidth="142.0" text="nom" />
+                      <TableColumn fx:id="colTel" prefWidth="130.0" text="Tel" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="toMed" layoutX="371.0" layoutY="14.0" mnemonicParsing="false" onAction="#toMedicament" text="Medicament" />
+                  <Button fx:id="ajouter" layoutX="136.0" layoutY="14.0" mnemonicParsing="false" onAction="#Ajouter" style="-fx-background-color: green; -fx-text-fill: white;" text="Ajouter" />
+                  <Button fx:id="modifier" layoutX="213.0" layoutY="14.0" mnemonicParsing="false" onAction="#Modifier" style="-fx-background-color: blue; -fx-text-fill: white;" text="Modifier" />
+                  <Button fx:id="archiver" layoutX="286.0" layoutY="14.0" mnemonicParsing="false" onAction="#Archiver" style="-fx-background-color: red; -fx-text-fill: white;" text="Archiver" />
+                  <Button fx:id="toAchat" layoutX="480.0" layoutY="14.0" mnemonicParsing="false" onAction="#toPatient" text="achat" />
+                  <Label fx:id="Ecode" layoutX="81.0" layoutY="39.0" textFill="RED" />
+                  <Label fx:id="EnomPat" layoutX="230.0" layoutY="48.0" textFill="RED" />
+                  <Label fx:id="Etel" layoutX="371.0" layoutY="48.0" textFill="RED" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="medicament" prefHeight="400.0" prefWidth="600.0" visible="false">
+               <children>
+                  <TextField fx:id="nomMed" layoutX="89.0" layoutY="89.0" prefHeight="25.0" prefWidth="109.0" promptText="nom:" />
+                  <TextField fx:id="prix" layoutX="198.0" layoutY="89.0" prefHeight="25.0" prefWidth="109.0" promptText="prix:" />
+                  <TextField fx:id="qte" layoutX="307.0" layoutY="89.0" prefHeight="25.0" prefWidth="109.0" promptText="quantité" />
+                  <TableView fx:id="tabM" layoutX="88.0" layoutY="130.0" onMouseClicked="#Consulter1" prefHeight="200.0" prefWidth="425.0">
+                     <columns>
+                        <TableColumn fx:id="colNomMed" prefWidth="108.0" text="Nom" />
+                        <TableColumn fx:id="colPrix" prefWidth="104.0" text="Prix" />
+                        <TableColumn fx:id="colQte" prefWidth="102.0" text="Qte" />
+                        <TableColumn fx:id="colType" prefWidth="110.0" text="type" />
+                     </columns>
+                  </TableView>
+                  <Button fx:id="toPatient" layoutX="371.0" layoutY="14.0" mnemonicParsing="false" onAction="#toPatients" text="Patients" />
+                  <CheckBox fx:id="type" layoutX="422.0" layoutY="93.0" mnemonicParsing="false" text="Special" textFill="WHITE" />
+                  <Button fx:id="ajouter1" layoutX="143.0" layoutY="14.0" mnemonicParsing="false" onAction="#Ajouter1" style="-fx-background-color: green; -fx-text-fill: white;" text="Ajouter" />
+                  <Button fx:id="modifier1" layoutX="214.0" layoutY="14.0" mnemonicParsing="false" onAction="#Modifier1" style="-fx-background-color: blue; -fx-text-fill: white;" text="Modifier" />
+                  <Button fx:id="archiver1" layoutX="293.0" layoutY="14.0" mnemonicParsing="false" onAction="#Archiver1" style="-fx-background-color: red; -fx-text-fill: white;" text="Archiver" />
+                  <Label fx:id="EnomMed" layoutX="88.0" layoutY="63.0" textFill="RED" />
+                  <Label fx:id="Eprix" layoutX="197.0" layoutY="63.0" textFill="RED" />
+                  <Label fx:id="Eqte" layoutX="306.0" layoutY="63.0" textFill="RED" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="login" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;">
+         <children>
+            <TextField fx:id="emailL" layoutX="337.0" layoutY="109.0" prefHeight="47.0" prefWidth="196.0" />
+            <PasswordField fx:id="mdpL" layoutX="337.0" layoutY="224.0" prefHeight="47.0" prefWidth="196.0" />
+            <Label layoutX="254.0" layoutY="122.0" text="Email:" textFill="#FFFFFF">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="237.0" layoutY="237.0" text="Password:" textFill="#FFFFFF">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="398.0" layoutY="31.0" text="Login" textFill="#FFFFFF">
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="submitL" layoutX="346.0" layoutY="298.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: white; -fx-text-fill: black; -fx-background-radius: 10;" text="login" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="26.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@pharmacy%20icon.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="17.0" fitWidth="15.0" layoutX="518.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@email2.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="15.0" layoutX="518.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@password2.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="EemailL" layoutX="346.0" layoutY="86.0" textFill="RED" />
+            <Label fx:id="EmdpL" layoutX="342.0" layoutY="200.0" prefHeight="17.0" prefWidth="109.0" textFill="RED" />
+            <Button fx:id="toSignUp" layoutX="444.0" layoutY="298.0" mnemonicParsing="false" onAction="#toSignUp" style="-fx-background-color: white; -fx-background-radius: 10; -fx-text-fill: black;" text="crée compte" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="signup" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" visible="false">
+         <children>
+            <TextField fx:id="emailS" layoutX="202.0" layoutY="115.0" prefHeight="47.0" prefWidth="196.0" promptText="Email:" />
+            <PasswordField fx:id="mdpS" layoutX="202.0" layoutY="200.0" prefHeight="47.0" prefWidth="196.0" promptText="mot de pass:" />
+            <Label fx:id="EemailS" layoutX="213.0" layoutY="88.0" textFill="RED">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="EmdpS" layoutX="213.0" layoutY="173.0" textFill="RED">
+               <font>
+                  <Font name="Arial" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="252.0" layoutY="14.0" text="Sign Up" textFill="#FFFFFF">
+               <font>
+                  <Font name="Arial" size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="submitS" layoutX="212.0" layoutY="287.0" mnemonicParsing="false" onAction="#register" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Submit" />
+            <Button fx:id="toLogin" layoutX="306.0" layoutY="287.0" mnemonicParsing="false" onAction="#toLogin" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: white; -fx-text-fill: black;" text="Login Page" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="patMed" prefHeight="400.0" prefWidth="600.0" visible="false">
+         <children>
+            <TableView fx:id="tabPatMed" layoutX="14.0" layoutY="74.0" onMouseClicked="#Consulter2" prefHeight="282.0" prefWidth="337.0">
+              <columns>
+                <TableColumn fx:id="patCode" prefWidth="109.0" text="code du patient" />
+                <TableColumn fx:id="medNom" prefWidth="133.0" text="Nom du medicament" />
+                  <TableColumn fx:id="dateAchat" prefWidth="94.0" text="DateAchat" />
+              </columns>
+            </TableView>
+            <TableView fx:id="tabMed" layoutX="362.0" layoutY="74.0" onMouseClicked="#Consulter3" prefHeight="282.0" prefWidth="236.0">
+              <columns>
+                <TableColumn fx:id="nomMed1" prefWidth="78.0" text="nom" />
+                <TableColumn fx:id="colPrix1" prefWidth="53.0" text="prix" />
+                  <TableColumn fx:id="colQte1" prefWidth="40.0" text="qte" />
+                  <TableColumn fx:id="colType1" prefWidth="64.0" text="type" />
+              </columns>
+            </TableView>
+            <Button fx:id="ajouterMed" layoutX="183.0" layoutY="24.0" mnemonicParsing="false" onAction="#ajouterMed" text="Ajouter" />
+            <Button fx:id="supprimerMed" layoutX="264.0" layoutY="24.0" mnemonicParsing="false" onAction="#supprimerMed" text="Supprimer" />
+            <Button layoutX="365.0" layoutY="24.0" mnemonicParsing="false" onAction="#toPatients" text="Patients" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
